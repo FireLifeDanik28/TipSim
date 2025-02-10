@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="M8.BILL"
+             Title="BILL"
+             BackgroundColor="DarkGray">
+    <FlexLayout
+        AlignContent="Center"
+        AlignItems="Start"
+        WidthRequest="380"
+        HeightRequest="680"
+        Direction="Column"
+        
+    >
+        <Frame CornerRadius="10">
+            <StackLayout
+                WidthRequest="380"
+                HeightRequest="175"
+                BackgroundColor="White"
+            >
+                <Label
+                    HorizontalTextAlignment="Center"
+                    Text="TOTAL P/PERSON"
+                    WidthRequest="380"
+                    HeightRequest="25"
+                    FontFamily="Comic Sans MS"
+                    FontSize="15"
+                    TextColor="Blue"
+                    VerticalTextAlignment="Start"
+                    Margin="-5"
+                    TranslationX="-20"
+                />
+                <Label
+                    HorizontalTextAlignment="Start"
+                    Text="$0.00"
+                    WidthRequest="90"
+                    HeightRequest="175"
+                    FontFamily="Comic Sans MS"
+                    FontSize="30"
+                    TranslationX="-100"
+                    VerticalTextAlignment="Center"
+                />
+                <Line Stroke="Black"
+                      X1="0" Y1="0"
+                      X2="0" Y2="120"
+                      StrokeThickness="2"
+                      TranslationY="-150"
+                      TranslationX="165"
+                />
+                <Label
+                    HorizontalTextAlignment="Start"
+                    Text="SUBTOTAL"
+                    WidthRequest="90"
+                    HeightRequest="12"
+                    FontFamily="Comic Sans MS"
+                    FontSize="12"
+                    TranslationY="-250"
+                    TranslationX="80"
+                    VerticalTextAlignment="Center"
+                />
+                <Label
+                    HorizontalTextAlignment="Start"
+                    Text="$50.00"
+                    WidthRequest="90"
+                    HeightRequest="12"
+                    FontFamily="Comic Sans MS"
+                    FontSize="12"
+                    TranslationY="-245"
+                    TranslationX="80"
+                    TextColor="DarkBlue"
+                    VerticalTextAlignment="Center"
+                />
+                <Label
+                    HorizontalTextAlignment="Start"
+                    Text="TIP"
+                    WidthRequest="90"
+                    HeightRequest="12"
+                    FontFamily="Comic Sans MS"
+                    FontSize="12"
+                    TranslationY="-230"
+                    TranslationX="80"
+                    VerticalTextAlignment="Center"
+                />
+                <Label
+                    HorizontalTextAlignment="Start"
+                    Text="$50.00"
+                    WidthRequest="90"
+                    HeightRequest="12"
+                    FontFamily="Comic Sans MS"
+                    FontSize="12"
+                    TranslationY="-225"
+                    TranslationX="80"
+                    TextColor="DarkBlue"
+                    VerticalTextAlignment="Center"
+                />
+            </StackLayout>
+        </Frame>
+        <Label Text="Enter your bill: $"
+               TranslationY="30"
+               TranslationX="2.5"
+               HeightRequest="20"
+               WidthRequest="110"/>
+        //Scent Tree
+        <Entry
+            Placeholder="0.0"
+            WidthRequest="270"
+            HeightRequest="5"
+            TranslationX="110"
+            HorizontalTextAlignment="Start"
+            BackgroundColor="LightGray"
+            TextColor="Black"
+            PlaceholderColor="Gray"/>
+        <Label Text="Choose your tip"
+       TranslationY="50"
+       TranslationX="2.5"
+       HeightRequest="20"
+       WidthRequest="110"/>
+        <Button
+        WidthRequest="75"
+        HeightRequest="75"
+        Text="Go fuck &#x0a; yourself"
+            FontSize="11"
+            TranslationX="130"
+        />
+        <Button
+        WidthRequest="75"
+        HeightRequest="75"
+        Text="10%"
+            FontSize="15"
+            TranslationY="-75"
+            TranslationX="210"
+        />
+        <Button
+        WidthRequest="75"
+        HeightRequest="75"
+        Text="20%"
+            FontSize="15"
+            TranslationY="-150"
+            TranslationX="290"
+        />
+        <Label Text="Tip: 0%"
+            TranslationY="-50"
+            TranslationX="2.5"
+            HeightRequest="20"
+            WidthRequest="110"/>
+    </FlexLayout>
+</ContentPage>
