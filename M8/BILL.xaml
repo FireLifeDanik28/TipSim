@@ -10,8 +10,8 @@
         WidthRequest="380"
         HeightRequest="680"
         Direction="Column"
-        
     >
+        <!-- viewbox -->
         <Frame CornerRadius="10">
             <StackLayout
                 WidthRequest="380"
@@ -31,14 +31,15 @@
                     TranslationX="-20"
                 />
                 <Label
-                    HorizontalTextAlignment="Start"
                     Text="$0.00"
-                    WidthRequest="90"
+                    WidthRequest="130"
                     HeightRequest="175"
                     FontFamily="Comic Sans MS"
                     FontSize="30"
                     TranslationX="-100"
                     VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    x:Name="totalBill"
                 />
                 <Line Stroke="Black"
                       X1="0" Y1="0"
@@ -60,7 +61,7 @@
                 />
                 <Label
                     HorizontalTextAlignment="Start"
-                    Text="$50.00"
+                    Text="$0.00"
                     WidthRequest="90"
                     HeightRequest="12"
                     FontFamily="Comic Sans MS"
@@ -69,6 +70,7 @@
                     TranslationX="80"
                     TextColor="DarkBlue"
                     VerticalTextAlignment="Center"
+                    x:Name="partBill"
                 />
                 <Label
                     HorizontalTextAlignment="Start"
@@ -83,7 +85,7 @@
                 />
                 <Label
                     HorizontalTextAlignment="Start"
-                    Text="$50.00"
+                    Text="$0.00"
                     WidthRequest="90"
                     HeightRequest="12"
                     FontFamily="Comic Sans MS"
@@ -92,15 +94,16 @@
                     TranslationX="80"
                     TextColor="DarkBlue"
                     VerticalTextAlignment="Center"
+                    x:Name="partTip"
                 />
             </StackLayout>
         </Frame>
+        <!-- bill -->
         <Label Text="Enter your bill: $"
                TranslationY="30"
                TranslationX="2.5"
                HeightRequest="20"
                WidthRequest="110"/>
-        //Scent Tree
         <Entry
             Placeholder="0.0"
             WidthRequest="270"
@@ -109,39 +112,104 @@
             HorizontalTextAlignment="Start"
             BackgroundColor="LightGray"
             TextColor="Black"
-            PlaceholderColor="Gray"/>
+            PlaceholderColor="Gray"
+            x:Name="enterBill"
+            Keyboard="Numeric"
+            TextChanged="textChanged">
+            
+        </Entry>
+        <!-- tip choice -->
         <Label Text="Choose your tip"
        TranslationY="50"
        TranslationX="2.5"
        HeightRequest="20"
        WidthRequest="110"/>
         <Button
-        WidthRequest="75"
-        HeightRequest="75"
-        Text="Go fuck &#x0a; yourself"
-            FontSize="11"
-            TranslationX="130"
-        />
-        <Button
+            x:Name="tenTip"
+            Clicked="OnFirstButtonClicked"
         WidthRequest="75"
         HeightRequest="75"
         Text="10%"
-            FontSize="15"
-            TranslationY="-75"
+        FontSize="15"
+            TranslationX="130"
+        />
+        <Button
+            x:Name="fiveTip"
+            Clicked="OnSecondButtonClicked"
+        WidthRequest="75"
+        HeightRequest="75"
+        Text="15%"
+        FontSize="15"
+            TranslationY="-73"
             TranslationX="210"
         />
         <Button
+            x:Name="twentyTip"
+            Clicked="OnThirdButtonClicked"
         WidthRequest="75"
         HeightRequest="75"
         Text="20%"
-            FontSize="15"
-            TranslationY="-150"
+        FontSize="15"
+            TranslationY="-147"
             TranslationX="290"
         />
-        <Label Text="Tip: 0%"
-            TranslationY="-50"
+        <!-- tip % -->
+        <Label 
+            x:Name="sliderTipView"
+            Text="Tip: 0%"
+            TranslationY="-125"
             TranslationX="2.5"
             HeightRequest="20"
             WidthRequest="110"/>
+        <Slider
+            x:Name="sliderTip"
+            TranslationY="-150"
+            TranslationX="140"
+            WidthRequest="220"
+            Minimum="0"
+            Maximum="100"
+            MinimumTrackColor="BlueViolet"
+            MaximumTrackColor="Gray"
+            ThumbColor="BlueViolet"
+            ValueChanged="sliderValue"
+        />
+        <!-- split -->
+        <Label Text="Split the total"
+    TranslationY="-125"
+    TranslationX="2.5"
+    HeightRequest="20"
+    WidthRequest="110"/>
+        <Button
+            x:Name="minusSub"
+        WidthRequest="75"
+        HeightRequest="50"
+        Text="-"
+        FontSize="25"
+        TranslationX="130"
+        TranslationY="-150"
+        Clicked="OnMinusButtonClicked"
+        />
+        <Button
+            x:Name="plusSub"
+        WidthRequest="75"
+        HeightRequest="50"
+        Text="+"
+        FontSize="25"
+        TranslationX="290"
+        TranslationY="-199"
+        Clicked="OnPlusButtonClicked"
+        />
+        <Label
+            x:Name="sub"
+            Text="1"
+        FontSize="25"
+        TranslationY="-248"
+        TranslationX="197"
+        HeightRequest="50"
+        WidthRequest="100"
+        BackgroundColor="White"
+        HorizontalTextAlignment="Center"
+        VerticalTextAlignment="Center"
+        ZIndex="-2"/>
     </FlexLayout>
 </ContentPage>
